@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gesture Snake Game - Hand Control</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐍 Gesture Snake Game</h1>
+            <p>Control the snake with hand gestures!</p>
+        </header>
+
+        <div class="main-content">
+            <div class="game-area">
+                <canvas id="gameCanvas" width="600" height="400"></canvas>
+                <div class="overlay" id="gameOverlay">
+                    <div class="message" id="gameMessage">Game Over!</div>
+                    <button onclick="restartGame()" class="restart-btn">Restart Game</button>
+                </div>
+            </div>
+
+            <div class="side-panel">
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Score</span>
+                        <span class="stat-value" id="score">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">High Score</span>
+                        <span class="stat-value" id="highScore">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Level</span>
+                        <span class="stat-value" id="level">1</span>
+                    </div>
+                </div>
+
+                <div class="gesture-indicator">
+                    <h3>Current Gesture</h3>
+                    <div class="gesture-display" id="gestureDisplay">
+                        <span class="gesture-arrow" id="gestureArrow">⬆</span>
+                    </div>
+                </div>
+
+                <div class="controls-guide">
+                    <h3>Controls</h3>
+                    <div class="control-item">
+                        <span class="gesture-icon">⬆️</span>
+                        <span class="gesture-name">Thumb Up</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="gesture-icon">⬇️</span>
+                        <span class="gesture-name">Thumb Down</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="gesture-icon">⬅️</span>
+                        <span class="gesture-name">Thumb Left</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="gesture-icon">➡️</span>
+                        <span class="gesture-name">Thumb Right</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Allow webcam access to detect your hand gestures | Press ESC to pause</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/hand-pose-detection"></script>
+    <script src="game.js"></script>
+</body>
+</html>
